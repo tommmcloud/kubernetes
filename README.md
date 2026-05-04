@@ -1,8 +1,8 @@
 # kubernetes# k8s-multi-tenant-hosting
 
-A Kubernetes platform that hosts multiple isolated application tenants on a single cluster. Each tenant gets its own namespace, resource limits, secrets, and routing — completely separated from every other tenant on the same infrastructure.
+A Kubernetes platform that hosts multiple isolated application tenants on one cluster. Each tenant gets its own namespace, resource limits, secrets, and routin; separated from other tenant(s) on the same infrastructure.
 
-This mirrors how real hosting platforms work at scale — one cluster running hundreds of customer environments, each unaware of the others.
+This mirrors how real hosting platforms work at scale - one cluster running multiple environments, each unaware and without access to the others.
 
 ---
 
@@ -13,14 +13,14 @@ Two tenants running in full isolation on a local kind cluster
 - Separate namespaces per tenant
 - Independent deployments with rolling update support
 - Resource quotas so no tenant can starve the cluster
-- DB credentials injected via Kubernetes Secrets
+- Database credentials injected via Kubernetes Secrets
 - Internal service discovery via CoreDNS
-- External routing by hostname via nginx Ingress Controller
+- External routing by hostname via Ingress Controller
 
 ---
 
 ## Architecture
-Each tenant lives in its own namespace. Services provide stable internal DNS. Ingress routes external traffic by hostname to the right tenant.
+Each tenant functions in its own namespace. Services provide stable internal DNS. Ingress routes external traffic by hostname to the right tenant.
 
 In production on EKS the Ingress Controller would provision an AWS ALB automatically. Security groups on the worker nodes would restrict traffic so only the ALB can reach the pods, and only the pods can reach RDS on port 5432.
 
