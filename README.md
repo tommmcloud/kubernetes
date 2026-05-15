@@ -86,14 +86,14 @@ This shows live CPU and memory consumption per tenant against their quota — th
 
 ---
 
-## Key concepts demonstrated
+## Concepts demonstrated
 
-**Namespace isolation** — tenant-a and tenant-b share the same cluster but cannot see or reach each other by default
+**Namespace isolation** - tenant-a and tenant-b share the same cluster but cannot see or reach each other by default
 
-**Resource quotas** — each namespace has hard limits on CPU, memory and pod count so one tenant cannot starve another
+**Resource quotas** - each namespace has hard limits on CPU, memory and pod count so one tenant cannot starve another
 
-**Secrets** — DB credentials stored in Kubernetes Secrets and injected as environment variables at pod startup, never hardcoded in the image
+**Secrets** - DB credentials stored in Kubernetes Secrets and injected as environment variables at pod startup, never hardcoded in the image
 
-**Services** — stable internal DNS so pods can be reached by name regardless of their IP changing
+**Services** - stable internal DNS so pods can be reached by name regardless of their IP changing
 
-**Ingress** — single entry point routing traffic to the right tenant by hostname
+**Ingress** - single entry point routing traffic to the right tenant by hostname
