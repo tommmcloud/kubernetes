@@ -1,6 +1,6 @@
 # kubernetes# k8s-multi-tenant-hosting
 
-A Kubernetes platform that hosts multiple isolated application tenants on one cluster. Each tenant gets its own namespace, resource limits, secrets, and routin; separated from other tenant(s) on the same infrastructure.
+A Kubernetes platform that hosts multiple isolated application tenants on one cluster. Each tenant gets its own namespace, resource limits, secrets, and routing; separated from other tenant(s) on the same infrastructure.
 
 This mirrors how real hosting platforms work at scale - one cluster running multiple environments, each unaware and without access to the others.
 
